@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @user.birthday %>
+</p>
+
+<p>
+  <strong>Reserved at:</strong>
+  <%= @user.reserved_at %>
+</p>
+
+<p>
+  <strong>Operation:</strong>
+  <%= @user.operation_id %>
+</p>
+
+<p>
+  <strong>Body part:</strong>
+  <%= @user.body_part %>
+</p>
+
+<p>
+  <strong>First time:</strong>
+  <%= @user.first_time %>
+</p>
+
+<p>
+  <strong>Reservation:</strong>
+  <%= @user.reservation_id %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @user.URL %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
