@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119053213) do
+ActiveRecord::Schema.define(version: 20141119081132) do
 
   create_table "answers", force: true do |t|
     t.text     "context"
@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(version: 20141119053213) do
     t.string   "URL"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
   end
+
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end
