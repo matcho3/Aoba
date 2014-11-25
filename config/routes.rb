@@ -4,11 +4,14 @@ Rails.application.routes.draw do
   get "sessions/create"
   match '/signin',to:'sessions#new',via:'get'
   match '/signout',to:'sessions#destroy',via:'delete'
+  match '/confirm',to:'users#confirm',via:'get'
+
   resources :answers
   resources :questions
   resources :operations
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+
 
 
 

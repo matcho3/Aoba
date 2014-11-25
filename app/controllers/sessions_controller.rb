@@ -6,12 +6,14 @@ class SessionsController < ApplicationController
     user = User.find_by(reservation_id: params[:session][:reservation_id])
     if user
       sign_in user
-      redirect_to root_url
+      redirect_to confirm_path
     else
       flash.now[:error] = 'Invalid email/password combination'
       render 'new'
     end
   end
+
+
 
   def destroy
   end

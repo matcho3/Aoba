@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	before_create :create_remember_token
 	belongs_to :operation
+	validates :birthday, :presence => true
+	
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64
