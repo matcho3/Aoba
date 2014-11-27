@@ -25,15 +25,10 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
-
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @question }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
+    if @question.save
+      redirect_to @question
+    else
+      render 'new'
     end
   end
 
@@ -71,4 +66,4 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:operation_id, :content)
     end
-end
+  end

@@ -1,15 +1,5 @@
 <%= form_for(@question) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
-      <ul>
-      <% @question.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/error_messages',object: f.object %>
 
   <div class="field">
     <%= f.label :operation_id %><br>
@@ -20,6 +10,6 @@
     <%= f.text_area :content %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "次へ", class: "btn btn-large btn-primary" %>
   </div>
 <% end %>

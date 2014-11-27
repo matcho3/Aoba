@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   get "about/index"
   root  'about#index'
   get "sessions/create"
   match '/signin',to:'sessions#new',via:'get'
   match '/signout',to:'sessions#destroy',via:'delete'
-  match '/confirm',to:'users#confirm',via:'get'
+   match '/confirm/:id',to:'users#confirm', as:'user_confirm', via:'get'
+   match '/driver/:id',to:'drivers#new',as:'resister_driver', via:'get'
 
   resources :answers
   resources :questions
   resources :operations
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
