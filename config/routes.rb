@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   ActiveAdmin.routes(self)
+
   get "about/index"
   root  'about#index'
   get "sessions/create"
@@ -29,7 +31,8 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  # Example resource route with りoptions:
+
+  # Example resource route with options:
   #   resources :products do
   #     member do
   #       get 'short'
