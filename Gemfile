@@ -37,6 +37,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

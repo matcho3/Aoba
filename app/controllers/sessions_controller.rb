@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(reservation_id: params[:session][:reservation_id])
     if user
-      sign_in user
+      sign_in :user, user
       redirect_to user
     else
       flash.now[:error] = 'Invalid email/password combination'
